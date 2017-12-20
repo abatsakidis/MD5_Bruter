@@ -1,11 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Runtime.InteropServices;
@@ -44,12 +39,26 @@ public partial class frmMain : Form
         InitializeComponent();
     }
 
+    //Validates a MD5 hash string
+    static bool IsValidMD5(string md5)
+    {
+        if (md5 == null || md5.Length != 32) return false;
+        foreach (var x in md5)
+        {
+            if ((x < '0' || x > '9') && (x < 'a' || x > 'f') && (x < 'A' || x > 'F'))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private void btnStartResume_Click(object sender, EventArgs e)
     {
         //Validation
-        if (txtMD5.Text.Trim().Length != 32)
+        if (IsValidMD5(txtMD5.Text.Trim()) != true)
         {
-            ShowErrorBox("MD5 hashes must be 32 characters long and hexidecimal.");
+            ShowErrorBox("MD5 hashe is not valid. It must be 32 characters long and hexidecimal.");
             return;
         }
         if (int.TryParse(txtLowerLimit.Text, out MINLENGTH) == false ||

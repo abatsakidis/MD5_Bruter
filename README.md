@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+## Description ##
 
-You can use the [editor on GitHub](https://github.com/abatsakidis/MD5_Bruter/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a simple MD5 Hash Cracker. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## How To ##
 
-### Markdown
+* Insert your MD5 Hash
+* Select Max # of characters 
+* Select letters, special characters, or/and numbers
+* Click Start button
+* Abort any time
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<br>
 
-```markdown
-Syntax highlighted code block
+## Tested on ##
 
-# Header 1
-## Header 2
-### Header 3
+**OS**: Windows 10 x86_64 <br>
+**CPU**: Intel 2 Quad Q6600 (4) @ 2.400GHz <br>
+**Memory**: 4085MiB <br>
 
-- Bulleted
-- List
+## Build ##
 
-1. Numbered
-2. List
+* Use Visual Studio 2017<br>
+* Open application's solution file (CubeMaster.sln)<br>
 
-**Bold** and _Italic_ and `Code` text
+## Author ##
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/abatsakidis/MD5_Bruter/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Batsakidis Athanasios<br>
+a.batsakidis@re-think.gr

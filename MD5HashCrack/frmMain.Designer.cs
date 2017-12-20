@@ -31,7 +31,6 @@ partial class frmMain
             this.label1 = new System.Windows.Forms.Label();
             this.txtResume = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUpperLimit = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chkLower = new System.Windows.Forms.CheckBox();
             this.chkUpper = new System.Windows.Forms.CheckBox();
@@ -43,30 +42,34 @@ partial class frmMain
             this.btnAbort = new System.Windows.Forms.Button();
             this.tmrMain = new System.Windows.Forms.Timer(this.components);
             this.lblStatus = new System.Windows.Forms.Label();
-            this.txtLowerLimit = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtLastMD5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numUpperLimit = new System.Windows.Forms.NumericUpDown();
+            this.numLowerLimit = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpperLimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLowerLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 16);
+            this.label1.Location = new System.Drawing.Point(9, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Last Word Tried:";
+            this.label1.Text = "Word Tried:";
             // 
             // txtResume
             // 
             this.txtResume.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResume.Location = new System.Drawing.Point(3, 31);
+            this.txtResume.Location = new System.Drawing.Point(8, 28);
             this.txtResume.Name = "txtResume";
             this.txtResume.Size = new System.Drawing.Size(142, 22);
             this.txtResume.TabIndex = 1;
@@ -76,24 +79,14 @@ partial class frmMain
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 13);
+            this.label2.Size = new System.Drawing.Size(117, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Max # of Char between";
-            // 
-            // txtUpperLimit
-            // 
-            this.txtUpperLimit.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUpperLimit.Location = new System.Drawing.Point(103, 42);
-            this.txtUpperLimit.MaxLength = 2;
-            this.txtUpperLimit.Name = "txtUpperLimit";
-            this.txtUpperLimit.Size = new System.Drawing.Size(51, 22);
-            this.txtUpperLimit.TabIndex = 4;
-            this.txtUpperLimit.Text = "4";
+            this.label2.Text = "Max # of char between";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 65);
+            this.label3.Location = new System.Drawing.Point(12, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 5;
@@ -104,7 +97,7 @@ partial class frmMain
             this.chkLower.AutoSize = true;
             this.chkLower.Checked = true;
             this.chkLower.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkLower.Location = new System.Drawing.Point(15, 81);
+            this.chkLower.Location = new System.Drawing.Point(15, 90);
             this.chkLower.Name = "chkLower";
             this.chkLower.Size = new System.Drawing.Size(98, 17);
             this.chkLower.TabIndex = 6;
@@ -114,7 +107,7 @@ partial class frmMain
             // chkUpper
             // 
             this.chkUpper.AutoSize = true;
-            this.chkUpper.Location = new System.Drawing.Point(15, 104);
+            this.chkUpper.Location = new System.Drawing.Point(15, 113);
             this.chkUpper.Name = "chkUpper";
             this.chkUpper.Size = new System.Drawing.Size(98, 17);
             this.chkUpper.TabIndex = 7;
@@ -126,7 +119,7 @@ partial class frmMain
             this.chkNumeric.AutoSize = true;
             this.chkNumeric.Checked = true;
             this.chkNumeric.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkNumeric.Location = new System.Drawing.Point(15, 127);
+            this.chkNumeric.Location = new System.Drawing.Point(15, 136);
             this.chkNumeric.Name = "chkNumeric";
             this.chkNumeric.Size = new System.Drawing.Size(65, 17);
             this.chkNumeric.TabIndex = 8;
@@ -136,7 +129,7 @@ partial class frmMain
             // chkSpecial
             // 
             this.chkSpecial.AutoSize = true;
-            this.chkSpecial.Location = new System.Drawing.Point(15, 150);
+            this.chkSpecial.Location = new System.Drawing.Point(15, 159);
             this.chkSpecial.Name = "chkSpecial";
             this.chkSpecial.Size = new System.Drawing.Size(115, 17);
             this.chkSpecial.TabIndex = 9;
@@ -145,9 +138,9 @@ partial class frmMain
             // 
             // btnStartResume
             // 
-            this.btnStartResume.Location = new System.Drawing.Point(15, 365);
+            this.btnStartResume.Location = new System.Drawing.Point(15, 373);
             this.btnStartResume.Name = "btnStartResume";
-            this.btnStartResume.Size = new System.Drawing.Size(101, 23);
+            this.btnStartResume.Size = new System.Drawing.Size(75, 23);
             this.btnStartResume.TabIndex = 10;
             this.btnStartResume.Text = "Start";
             this.btnStartResume.UseVisualStyleBackColor = true;
@@ -156,11 +149,12 @@ partial class frmMain
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.label4.Location = new System.Drawing.Point(9, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.Size = new System.Drawing.Size(139, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "MD5 to Search For:";
+            this.label4.Text = "The MD5 to search for:";
             // 
             // txtMD5
             // 
@@ -174,7 +168,7 @@ partial class frmMain
             // btnAbort
             // 
             this.btnAbort.Enabled = false;
-            this.btnAbort.Location = new System.Drawing.Point(123, 365);
+            this.btnAbort.Location = new System.Drawing.Point(109, 373);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(75, 23);
             this.btnAbort.TabIndex = 13;
@@ -190,21 +184,11 @@ partial class frmMain
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(17, 343);
+            this.lblStatus.Location = new System.Drawing.Point(17, 352);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(89, 13);
             this.lblStatus.TabIndex = 14;
             this.lblStatus.Text = "Waiting to Start...";
-            // 
-            // txtLowerLimit
-            // 
-            this.txtLowerLimit.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLowerLimit.Location = new System.Drawing.Point(15, 42);
-            this.txtLowerLimit.MaxLength = 2;
-            this.txtLowerLimit.Name = "txtLowerLimit";
-            this.txtLowerLimit.Size = new System.Drawing.Size(51, 22);
-            this.txtLowerLimit.TabIndex = 15;
-            this.txtLowerLimit.Text = "1";
             // 
             // label5
             // 
@@ -217,7 +201,7 @@ partial class frmMain
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(205, 364);
+            this.btnExit.Location = new System.Drawing.Point(205, 372);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 17;
@@ -229,7 +213,7 @@ partial class frmMain
             // 
             this.txtLastMD5.Enabled = false;
             this.txtLastMD5.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastMD5.Location = new System.Drawing.Point(3, 72);
+            this.txtLastMD5.Location = new System.Drawing.Point(8, 72);
             this.txtLastMD5.Name = "txtLastMD5";
             this.txtLastMD5.Size = new System.Drawing.Size(259, 21);
             this.txtLastMD5.TabIndex = 19;
@@ -237,11 +221,11 @@ partial class frmMain
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 56);
+            this.label6.Location = new System.Drawing.Point(10, 56);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Last MD5:";
+            this.label6.Text = "MD5 Tried:";
             // 
             // groupBox1
             // 
@@ -257,27 +241,71 @@ partial class frmMain
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtUpperLimit);
+            this.groupBox2.Controls.Add(this.numLowerLimit);
+            this.groupBox2.Controls.Add(this.numUpperLimit);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.chkLower);
-            this.groupBox2.Controls.Add(this.txtLowerLimit);
             this.groupBox2.Controls.Add(this.chkUpper);
             this.groupBox2.Controls.Add(this.chkNumeric);
             this.groupBox2.Controls.Add(this.chkSpecial);
             this.groupBox2.Location = new System.Drawing.Point(15, 161);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(268, 179);
+            this.groupBox2.Size = new System.Drawing.Size(268, 182);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
+            // 
+            // numUpperLimit
+            // 
+            this.numUpperLimit.Location = new System.Drawing.Point(103, 44);
+            this.numUpperLimit.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpperLimit.Name = "numUpperLimit";
+            this.numUpperLimit.Size = new System.Drawing.Size(39, 20);
+            this.numUpperLimit.TabIndex = 17;
+            this.numUpperLimit.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // numLowerLimit
+            // 
+            this.numLowerLimit.Location = new System.Drawing.Point(15, 45);
+            this.numLowerLimit.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLowerLimit.Name = "numLowerLimit";
+            this.numLowerLimit.Size = new System.Drawing.Size(51, 20);
+            this.numLowerLimit.TabIndex = 18;
+            this.numLowerLimit.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(115, 408);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(170, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Created by : Batsakidis Athanasios";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 403);
+            this.ClientSize = new System.Drawing.Size(292, 430);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExit);
@@ -291,12 +319,14 @@ partial class frmMain
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MD5 Crack";
+            this.Text = "MD5 Bruter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpperLimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLowerLimit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,7 +337,6 @@ partial class frmMain
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.TextBox txtResume;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.TextBox txtUpperLimit;
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.CheckBox chkLower;
     private System.Windows.Forms.CheckBox chkUpper;
@@ -319,11 +348,13 @@ partial class frmMain
     private System.Windows.Forms.Button btnAbort;
     private System.Windows.Forms.Timer tmrMain;
     private System.Windows.Forms.Label lblStatus;
-    private System.Windows.Forms.TextBox txtLowerLimit;
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.Button btnExit;
     private System.Windows.Forms.TextBox txtLastMD5;
     private System.Windows.Forms.Label label6;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.GroupBox groupBox2;
+    private System.Windows.Forms.NumericUpDown numLowerLimit;
+    private System.Windows.Forms.NumericUpDown numUpperLimit;
+    private System.Windows.Forms.Label label7;
 }

@@ -61,8 +61,8 @@ public partial class frmMain : Form
             ShowErrorBox("MD5 hashe is not valid. It must be 32 characters long and hexidecimal.");
             return;
         }
-        if (int.TryParse(txtLowerLimit.Text, out MINLENGTH) == false ||
-            int.TryParse(txtUpperLimit.Text, out MAXLENGTH) == false)
+        if (int.TryParse(numLowerLimit.Text, out MINLENGTH) == false ||
+            int.TryParse(numUpperLimit.Text, out MAXLENGTH) == false)
         {
             ShowErrorBox("Min and Max lengths must be valid integers.");
             return;
@@ -84,12 +84,11 @@ public partial class frmMain : Form
             return;
         }
 
-        //Valid. Do it!
+        //Validation PASSED! Crack it!
         LockForm();        
 
         CreateCharacterArray();
-        //7DC3E82B35250CBC56139EF42ABDECED
-        //7D-C3-E8-2B-35-25-0C-BC-56-13-9E-F4-2A-BD-EC-ED
+        
         SEARCHINGMD5 = "";
         string mashup = txtMD5.Text.Trim().ToUpper();
         for (int i = 0; i < mashup.Length; i += 2)
@@ -103,7 +102,7 @@ public partial class frmMain : Form
         MatchFound = false;
         t = new Thread(BruteForceProcess);
         t.Start();
-        //BruteForceProcess();
+        
     }
 
     private void btnAbort_Click(object sender, EventArgs e)
@@ -121,8 +120,8 @@ public partial class frmMain : Form
         txtResume.Enabled = false;
         txtMD5.Enabled = false;
         txtLastMD5.Enabled = false;
-        txtLowerLimit.Enabled = false;
-        txtUpperLimit.Enabled = false;
+        numLowerLimit.Enabled = false;
+        numUpperLimit.Enabled = false;
         chkLower.Enabled = false;
         chkUpper.Enabled = false;
         chkNumeric.Enabled = false;
@@ -138,8 +137,8 @@ public partial class frmMain : Form
         txtResume.Enabled = true;
         txtMD5.Enabled = true;
         txtLastMD5.Enabled = true;
-        txtLowerLimit.Enabled = true;
-        txtUpperLimit.Enabled = true;
+        numLowerLimit.Enabled = true;
+        numUpperLimit.Enabled = true;
         chkLower.Enabled = true;
         chkUpper.Enabled = true;
         chkNumeric.Enabled = true;
@@ -152,16 +151,11 @@ public partial class frmMain : Form
     {
         DateTime startTime = DateTime.Now;
 
-        //Trash old data file...
-        //if(File.Exists(DATAFILE))
-        //    File.Delete(DATAFILE);
-
         //Create new data file and open up the file stream.
         try
         {
             SB = new StringBuilder();
-            //SW = new StreamWriter(DATAFILE);
-
+      
             TotalAttempts = 0;
             PossibleCombos = 0;
             for (int i = 1; i <= MAXLENGTH; i++)
@@ -190,7 +184,7 @@ public partial class frmMain : Form
         }
         finally
         {
-            //SW.Close();
+            
         }
 
         DateTime endTime = DateTime.Now;
@@ -293,7 +287,6 @@ public partial class frmMain : Form
         //Write this word
         SB.Append(Word);
         CURRENTMD5 = EncodeMD5(SB.ToString());
-        //SW.Write(SB.ToString() + "\t" + CURRENTMD5 + "\n");
         AttemptsPerSecond++;
         TotalAttempts++;
 
@@ -329,7 +322,6 @@ public partial class frmMain : Form
     public string EncodeMD5(string originalString)
     {
         //Instantiate MD5CryptoServiceProvider, get bytes for original password and compute hash (encoded password)
-        //md5 = new MD5CryptoServiceProvider();
         originalBytes = ASCIIEncoding.Default.GetBytes(originalString);
         encodedBytes = md5.ComputeHash(originalBytes);
 
@@ -405,14 +397,14 @@ public partial class frmMain : Form
     {
         if(this.Focused == false)
             FlashWindow(this.Handle, true);
-        MessageBox.Show(this, msg, "MD5HashCrack Time Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        MessageBox.Show(this, msg, "MD5 Bruter Time Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void ShowErrorBox(string msg)
     {
         if (this.Focused == false)
             FlashWindow(this.Handle, true);
-        MessageBox.Show(this, msg, "MD5HashCrack", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(this, msg, "MD5 Bruter", MessageBoxButtons.OK, MessageBoxIcon.Error);
     }
 
     private void frmMain_FormClosing(object sender, FormClosingEventArgs e)

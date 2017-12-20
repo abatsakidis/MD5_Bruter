@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MD5HashCrack", "MD5HashCrack\MD5HashCrack.csproj", "{4BD89036-A832-4101-8D49-A82945AF96C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MD5_Bruter", "MD5HashCrack\MD5_Bruter.csproj", "{4BD89036-A832-4101-8D49-A82945AF96C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

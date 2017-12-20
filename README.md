@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/hctwkffjvt2wblr1?svg=true)](https://ci.appveyor.com/project/abatsakidis/md5-bruter)
+[![Build status](https://ci.appveyor.com/api/github/webhook?id=1khrq05788gqkgw1)](https://ci.appveyor.com/project/abatsakidis/md5-bruter)
 
 ## Description ##
 

@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/hctwkffjvt2wblr1?svg=true)](https://ci.appveyor.com/project/abatsakidis/md5-bruter)
+
 ## Description ##
 
 This is a simple MD5 Hash Cracker. 

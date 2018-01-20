@@ -25,7 +25,7 @@ This is a simple MD5 Hash Cracker.
 ## Build ##
 
 * Use Visual Studio 2017<br>
-* Open application's solution file (CubeMaster.sln)<br>
+* Open application's solution file (MD5_Bruter.sln)<br>
 
 ## Author ##
 
